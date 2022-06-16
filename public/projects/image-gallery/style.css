@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap');
+
+:root {
+  --color-gray-200: hsl(0, 0%, 80%);
+  --color-gray-300: hsl(0, 0%, 70%);
+
+  --color-white: hsl(0, 0%, 100%);
+  --color-black: hsl(0, 0%, 0%);
+  --max-width: 1200px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* navbar text color */
+.navbar-back-btn,
+.navbar-back-btn a {
+  color: black !important;
+}
+
+#body-tag {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+button i {
+  color: var(--color-white);
+}
+
+/* GALLERY CONTAINER */
+.gallery-container {
+  width: 100%;
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.gallery-image-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem 0 3rem;
+}
+
+.gallery-title {
+  grid-column: 1 / span 3;
+  font-size: xx-large;
+  text-transform: capitalize;
+  border-bottom: 2px solid var(--color-gray-200);
+  padding: 0.6rem 0;
+  margin-bottom: 0.4rem;
+}
+
+.gallery-thumb-image {
+  cursor: pointer;
+  width: 100%;
+  height: 15rem;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  transition: var(--transition);
+  filter: grayscale(1);
+}
+
+.gallery-thumb-image:hover {
+  filter: grayscale(0);
+}
+
+.gallery-thumb-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.gallery-thumb-image:hover img {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 900px) {
+  .gallery-image-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-title {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery-image-section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .gallery-title {
+    grid-column: 1 / span 1;
+  }
+}
+
+/* MODAL */
+
+.modal {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  position: fixed;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 1);
+  opacity: 0;
+  overflow: scroll;
+}
+
+.modal.open {
+  opacity: 1;
+  z-index: 999;
+}
+
+.modal-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  font-size: xx-large;
+  z-index: 9;
+}
+
+.modal-content {
+  width: 100%;
+}
+
+.modal-main-image-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.modal-main-image {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.modal-controls {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-prev-btn,
+.modal-next-btn {
+  padding: 1rem;
+  font-size: xx-large;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-prev-btn {
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+
+.modal-next-btn {
+  border-top-left-radius: 0.4rem;
+  border-bottom-left-radius: 0.4rem;
+}
+
+.modal-image-name {
+  color: var(--color-white);
+  padding: 1.4rem 1rem;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.modal-images {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.modal-thumb-image {
+  width: 100%;
+  height: 120px;
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+
+.modal-thumb-image.selected {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.modal-thumb-image:hover {
+  filter: grayscale(0);
+}
+
+.modal-thumb-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+  .modal-container {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .modal-close-btn {
+    position: relative;
+    top: 1rem;
+    right: 1rem;
+    margin-bottom: 5rem;
+  }
+
+  .modal-prev-btn,
+  .modal-next-btn {
+    padding: 0.8rem;
+    font-size: x-large;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .modal-main-image {
+    height: 40vh;
+  }
+
+  .modal-prev-btn,
+  .modal-next-btn {
+    padding: 0.8rem;
+    font-size: large;
+  }
+
+  .modal-images {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

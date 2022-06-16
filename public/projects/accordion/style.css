@@ -1,0 +1,122 @@
+/* navbar back button color */
+.navbar-back-btn,
+.navbar-back-btn a {
+  color: #333 !important;
+}
+
+:root {
+  --color-primary: hsl(5, 90%, 50%);
+  --color-gray-400: hsl(0, 0%, 60%);
+  --color-gray-700: hsl(0, 0%, 30%);
+  --transition: all 0.4s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.5;
+}
+
+.accordion-container {
+  width: 100%;
+  max-width: 960px;
+  padding: 1.5rem;
+}
+
+.accordion-title {
+  text-transform: capitalize;
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.accordion-item {
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.accordion-item.open {
+  margin: 0.9rem 0 1.8rem;
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-gray-400);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.accordion-item.open .accordion-header {
+  border-bottom: 1px solid var(--color-gray-700);
+}
+
+.accordion-header-title {
+  text-transform: capitalize;
+  font-size: x-large;
+  font-weight: 400;
+  color: var(--color-gray-400);
+  transition: var(--transition);
+}
+
+.accordion-item.open .accordion-header-title {
+  color: var(--color-primary);
+}
+
+.accordion-header-icon {
+  fill: var(--color-gray-400);
+  transform: rotate(90deg);
+  transition: var(--transition);
+}
+
+.accordion-item.open .accordion-header-icon {
+  transform: rotate(-90deg);
+  fill: var(--color-primary);
+}
+
+.accordion-description {
+  font-size: 1.3rem;
+  color: var(--color-gray-700);
+  height: 0;
+  transition: var(--transition);
+}
+@media screen and (max-width: 900px) {
+  .accordion-item.open {
+    margin: 0.4rem 0 1rem;
+  }
+
+  .accordion-title {
+    font-size: 2rem;
+  }
+
+  .accordion-header-title {
+    font-size: 1.2rem;
+  }
+
+  .accordion-description {
+    font-size: 1rem;
+  }
+}
+
+.link-source {
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
+
+.link-source a {
+  text-decoration: none;
+}

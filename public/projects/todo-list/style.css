@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --color-white: #fff;
+  --color-gray-50: #f1f1f1;
+  --color-gray-100: #e6e6e6;
+  --color-gray-200: #cccccc;
+  --color-gray-800: #333333;
+  --color-gray-900: #1a1a1a;
+
+  --color-success: rgb(31, 173, 36);
+  --color-danger: rgb(167, 29, 29);
+  --color-info: rgb(229, 156, 39);
+
+  --max-width: 320px;
+  --transition: all 0.4s ease;
+  --transition-button: all 0.1s ease;
+}
+
+/* navbar back button color */
+.navbar-back-btn,
+.navbar-back-btn a {
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-gray-900);
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* CODE GOES HERE */
+
+button,
+input {
+  border: none;
+  background: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+.form-modal-container {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.form-modal-container.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+#form-modal {
+  color: var(--color-gray-900);
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  padding: 1.4rem 2rem;
+  border-radius: 0.4rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+  transition: var(--transition);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
+.form-modal-container.show #form-modal {
+  transform: translate(-50%, -50%);
+}
+
+.form-modal-title {
+  text-transform: capitalize;
+  font-size: xx-large;
+}
+
+.form-group {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--color-white);
+  color: var(--color-gray-900);
+  font-size: large;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-transform: capitalize;
+  border-bottom: 1px solid var(--color-gray-900);
+}
+
+.form-input::placeholder {
+  color: #bbb;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.form-input-check {
+  cursor: pointer;
+  width: 1.2rem;
+  height: 1.2rem;
+  filter: hue-rotate(240deg);
+}
+
+.form-input-check-title {
+  cursor: pointer;
+  text-transform: capitalize;
+  margin-left: 0.6rem;
+  font-size: medium;
+}
+
+.submit-btn {
+  cursor: pointer;
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  font-size: large;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  text-transform: capitalize;
+}
+
+.submit-btn:hover {
+  background: var(--color-gray-800);
+}
+
+.close-modal-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: medium;
+  color: var(--color-gray-900);
+  border: 2px solid var(--color-gray-900);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-button);
+}
+
+.close-modal-btn:hover {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.modal-bg {
+  width: 100%;
+  height: 100%;
+  background: var(--color-gray-900);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+#todo {
+  width: 100%;
+  max-width: var(--max-width);
+  min-height: 405px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 1rem 1rem;
+  background: var(--color-white);
+  border-radius: 1rem;
+  box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 1);
+}
+
+.todo-header {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-gray-100);
+  border-radius: 0.4rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.todo-header .todo-logo {
+  font-size: x-large;
+  text-transform: capitalize;
+  padding: 0 1rem;
+}
+
+.todo-header .add-btn {
+  cursor: pointer;
+  font-size: large;
+  background: var(--color-gray-900);
+  color: var(--color-white);
+  width: auto;
+  width: 50px;
+  height: 100%;
+}
+
+.todo-header .add-btn i {
+  transition: var(--transition-button);
+}
+
+.todo-header .add-btn:hover i {
+  transform: scale(1.1);
+}
+
+#todo-list {
+  width: 100%;
+  position: relative;
+}
+
+.todo-list-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 0.5px solid var(--color-gray-200);
+}
+
+.todo-list-title {
+  font-size: large;
+  text-transform: capitalize;
+}
+
+.todo-list-title.checked {
+  color: var(--color-gray-200);
+}
+
+.todo-list-controls .edit-btn,
+.todo-list-controls .delete-btn {
+  cursor: pointer;
+  font-size: medium;
+  margin-left: 0.6rem;
+  transition: var(--transition-button);
+}
+
+.todo-list-controls .edit-btn:hover {
+  color: var(--color-info);
+}
+
+.todo-list-controls .delete-btn:hover {
+  color: var(--color-danger);
+}
+
+#todo-alert {
+  position: absolute;
+  top: 1.4rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: var(--max-width);
+  z-index: 9;
+  transition: var(--transition);
+  visibility: hidden;
+  opacity: 0;
+}
+
+#todo-alert.show {
+  transform: translate(-50%, 0);
+  visibility: visible;
+  opacity: 1;
+}
+
+.todo-alert-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-gray-900);
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.bg-alert-success {
+  background: var(--color-success);
+}
+
+.bg-alert-danger {
+  background: var(--color-danger);
+}
+
+.bg-alert-info {
+  background: var(--color-info);
+}
+
+.todo-alert-message {
+  color: var(--color-white);
+  text-transform: capitalize;
+}
+
+.close-alert-btn {
+  cursor: pointer;
+  color: var(--color-white);
+  font-size: medium;
+  width: 30px;
+  height: 30px;
+}

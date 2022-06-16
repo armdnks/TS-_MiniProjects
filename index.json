@@ -1,0 +1,22 @@
+[
+  {
+    "title": "todo list",
+    "href": "./projects/todo-list/index.html",
+    "image": "./images/project-todo-list.jpg"
+  },
+  {
+    "title": "accordion",
+    "href": "./projects/accordion/index.html",
+    "image": "./images/project-accordion.jpg"
+  },
+  {
+    "title": "image gallery",
+    "href": "./projects/image-gallery/index.html",
+    "image": "./images/project-image-gallery.jpg"
+  },
+  {
+    "title": "mousemove parallax",
+    "href": "./projects/mousemove-parallax/index.html",
+    "image": "./images/project-mousemove-parallax.jpg"
+  }
+]

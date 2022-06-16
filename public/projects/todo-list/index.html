@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="../../navbar/navbar.js" defer></script>
+    <script type="module" src="app.js"></script>
+  </head>
+
+  <body>
+    <nav id="navbar"></nav>
+    <!-- CODE GOES HERE -->
+    <div class="container">
+      <div class="form-modal-container">
+        <div id="form-modal">
+          <h3 class="form-modal-title"><span>todo</span> app</h3>
+          <form class="form-group">
+            <input type="text" id="form-input" placeholder="something?" minlength="3" maxlength="20" class="form-input" />
+            <div class="form-control-check">
+              <input type="checkbox" id="form-checked" class="form-input-check" />
+              <label for="form-checked" class="form-input-check-title">completed?</label>
+            </div>
+            <button type="submit" class="submit-btn">submit</button>
+          </form>
+          <button class="close-modal-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-bg"></div>
+      </div>
+
+      <div id="todo-alert">
+        <div class="todo-alert-container">
+          <h3 class="todo-alert-message">alert</h3>
+          <button class="close-alert-btn">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <section id="todo">
+        <header class="todo-header">
+          <h3 class="todo-logo">something?</h3>
+          <button class="add-btn">
+            <i class="fas fa-plus"></i>
+          </button>
+        </header>
+
+        <div id="todo-list">
+          <!--
+          <div class="todo-list-item">
+            <h3 class="todo-list-title">todo content</h3>
+            <div class="todo-list-controls">
+              <button class="edit-btn">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="delete-btn">
+                <i class="fas fa-trash"></i>
+              </button>
+            </div>
+          </div>
+          -->
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
