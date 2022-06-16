@@ -1,7 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 :root {
   --color-background: #eee;
+  --ts-blue: #3178c6;
+  --ts-accent-1: #358ef1;
+  --ts-accent-2: #235a97;
+  --ts-accent-3: #00273f;
+  --ts-highlight-1: #f1dd35;
+  --ts-highlight-2: #c6bf31;
+
   --max-width: 1350px;
 }
 
@@ -12,13 +19,24 @@
 }
 
 body {
-  background: var(--color-background);
+  background: linear-gradient(var(--ts-blue), var(--ts-blue), var(--ts-accent-2)), var(--ts-accent-2);
+  min-height: 100vh;
   transition: all 0.5s ease;
-  font-family: 'Poppins', sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
   font-size: xxx-large;
+}
+
+#header {
+  width: 100%;
+}
+
+#header img {
+  width: 100%;
+  object-fit: contain;
 }
 
 #showcase {
@@ -78,7 +96,7 @@ a {
 }
 
 .showcase-link:hover::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 100%;
   position: absolute;
@@ -99,4 +117,14 @@ a {
   .showcase-container {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+#footer {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.footer-small-text {
+  color: #fff;
 }
