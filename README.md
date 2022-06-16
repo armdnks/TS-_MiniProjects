@@ -2,6 +2,8 @@
 
 ##
 
+### Setup
+
 - #### Running all .ts file
 - terminal
 
