@@ -7,9 +7,10 @@ export default class SessionStorageAPI {
         const items = this.read();
         return items;
     }
-    // .post(id, { data })
+    // .post( id, {data: { data }} )
     post(id, data) {
         let items = this.read();
+        data = data.data;
         let item = { id, data };
         items.push(item);
         this.save(items);
@@ -20,7 +21,7 @@ export default class SessionStorageAPI {
         let items = this.read();
         let existing = items.find((item) => item.id === itemID);
         if (!existing)
-            throw new Error('Item not found');
+            throw new Error("Item not found");
         else
             existing.data = newData.data;
         this.save(items);
@@ -38,7 +39,7 @@ export default class SessionStorageAPI {
         localStorage.removeItem(this.storageName);
     }
     read() {
-        return JSON.parse(sessionStorage.getItem(this.storageName) || '[]');
+        return JSON.parse(sessionStorage.getItem(this.storageName) || "[]");
     }
     save(data) {
         sessionStorage.setItem(this.storageName, JSON.stringify(data));

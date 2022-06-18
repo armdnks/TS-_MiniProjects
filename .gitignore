@@ -1,5 +1,6 @@
 .DS_Store
 .prettierignore
 
+.vscode/
 _temp/
 _creative/

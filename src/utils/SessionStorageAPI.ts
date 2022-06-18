@@ -17,11 +17,12 @@ export default class SessionStorageAPI<T> {
     return items;
   }
 
-  // .post(id, { data })
-  post<T extends object>(id: number | string, data: T) {
+  // .post( id, {data: { data }} )
+  post<T extends IData>(id: number | string, data: T) {
     let items: T[] = this.read();
-    let item = { id, data } as T;
-    items.push(item);
+    data = data.data as T;
+    let item: IData = { id, data };
+    items.push(item as T);
     this.save(items);
     return item;
   }
@@ -31,7 +32,7 @@ export default class SessionStorageAPI<T> {
     let items: T[] = this.read();
     let existing = items.find((item: T) => item.id === itemID);
 
-    if (!existing) throw new Error('Item not found');
+    if (!existing) throw new Error("Item not found");
     else existing.data = newData.data;
 
     this.save(items);
@@ -51,7 +52,7 @@ export default class SessionStorageAPI<T> {
   }
 
   private read<T>() {
-    return JSON.parse(sessionStorage.getItem(this.storageName) || '[]') as T[];
+    return JSON.parse(sessionStorage.getItem(this.storageName) || "[]") as T[];
   }
 
   private save<T>(data: T) {

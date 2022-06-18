@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 :root {
   --color-background: #eee;
   --ts-blue: #3178c6;
@@ -20,9 +18,9 @@
 
 body {
   background: linear-gradient(var(--ts-blue), var(--ts-blue), var(--ts-accent-2)), var(--ts-accent-2);
+  width: 100%;
   min-height: 100vh;
   transition: all 0.5s ease;
-  /* font-family: "Poppins", sans-serif; */
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 

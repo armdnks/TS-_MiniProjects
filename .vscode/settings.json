@@ -1,8 +1,13 @@
 {
-  "editor.wordWrapColumn": 999,
-  "html.format.wrapLineLength": 999,
-  "prettier.printWidth": 999,
   "editor.wordWrap": "off",
+  "editor.wordWrapColumn": 999,
+  "editor.lineHeight": 35,
+  "editor.fontSize": 15,
+  "html.format.wrapLineLength": 999,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.port": 5501,
+  "prettier.printWidth": 999,
+  "terminal.integrated.fontSize": 13,
   "[markdown]": {
     "editor.wordWrap": "off"
   }
